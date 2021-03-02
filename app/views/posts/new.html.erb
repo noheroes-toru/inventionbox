@@ -1,0 +1,10 @@
+<h1>投稿フォーム</h1>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+  <div class="input-group input-group-lg">
+     <%= form.text_field :title, class: "form-control", placeholder: "タイトルを書いてください" %>
+  </div>
+  <div class="form-floating">
+    <%= form.text_area :content, class: "form-control", placeholder: "あなたのアイデアを書いてください", id:"floatingTextarea" %>
+  </div>
+  <%= form.submit '投稿する' %>
+<% end %>
