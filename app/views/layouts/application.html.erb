@@ -12,16 +12,20 @@
 
   <body>
     <nav class="navbar navbar-light bg-light">
-      <% if user_signed_in? %> 
-        <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
-        <!-- *_path はUserモデルを作成したときに、
-        deviseにより自動で作成されてますので、rake routesで確認できます -->
-        <strong><%= current_user.name %></strong>.
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "サインイン", new_user_registration_path %> 
-        <%= link_to "ログイン", new_user_session_path %>
-      <% end %>
+      <div class = "header-btn">
+        <% if user_signed_in? %> 
+          <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+          <!-- *_path はUserモデルを作成したときに、
+          deviseにより自動で作成されてますので、rake routesで確認できます -->
+          <strong><%= current_user.name %></strong>.
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "サインイン", new_user_registration_path %>
+          <%# # <a class="btn disabled">Button</a>  %>
+          <%= link_to "ログイン", new_user_session_path %> 
+          <%# <a class="btn disabled">Button</a> %>
+        <% end %>
+        </div>
       <div class="container-fluid">
         <%= link_to "InventionBox", root_path, class: "navbar-brand" %>
         <%= link_to 'アイデアを投稿する', '/posts/new',class:"btn btn-danger" %>
