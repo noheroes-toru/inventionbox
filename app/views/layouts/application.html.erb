@@ -29,6 +29,7 @@
       <div class="container-fluid">
         <%= link_to "InventionBox", root_path, class: "navbar-brand" %>
         <%= link_to 'アイデアを投稿する', '/posts/new',class:"btn btn-danger" %>
+        <%= link_to 'ランキング', ranking_posts_path, class: "ranking-btn"%>
       </div>
     </nav>
     <%= yield %>
